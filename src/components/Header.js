@@ -1,17 +1,45 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Icon, NavItem } from 'react-materialize'
+import AuthService from '../services/AuthService';
 
-const Header = () => (
-  <div>
-    <Navbar brand='lambda' right>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/login'>Login</Link></li>
-        <li><Link to='/register'>Register</Link></li>
-      </ul>
-    </Navbar>
-  </div>
-)
+class Header extends Component {
+  constructor() {
+    super();
+    this.Auth = new AuthService;
+  }
+  handleLogout(){
+    this.Auth.logout();
+    window.location = '/'
+  }
+  render() {
+    if (!this.Auth.loggedIn()) {
+      return (
+        < div >
+          <Navbar brand='lambda' right>
+            <ul>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/login'>Login</Link></li>
+              <li><Link to='/register'>Register</Link></li>
+            </ul>
+          </Navbar>
+        </div >
+      )
+    }
+    else{
+      return(
+        < div >
+          <Navbar brand='lambda' right>
+            <ul>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/user/id'>Profile</Link></li>
+              <li><a onClick={this.handleLogout.bind(this)}> Logout </a></li>
+            </ul>
+          </Navbar>
+        </div >
+      )
+    }
+  }
+}
 
 export default Header
