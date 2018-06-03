@@ -29,6 +29,18 @@ class CreateProject extends React.Component{
 			 <Input s={8} label="Amount Required" validate><Icon>account_balance</Icon></Input>
 		</Row>
 		<Row>
+			 <Input s={8} label="Phase 1 Description" validate><Icon>bookmark_border</Icon></Input>
+		</Row>
+		<Row>
+			 <Input s={8} label="Phase 2 Description" validate><Icon>bookmark_border</Icon></Input>
+		</Row>
+		<Row>
+			 <Input s={8} label="Phase 3 Description" validate><Icon>bookmark_border</Icon></Input>
+		</Row>
+		<Row>
+			 <Input s={8} label="Phase 4 Description" validate><Icon>bookmark_border</Icon></Input>
+		</Row>
+		<Row>
 		<label for="describe">Description of the Project in Markdown</label>
 			<textarea s={8} id="describe" name="describe" class="materialize-textarea" validate value={this.state.describe} onChange={this.handleChange.bind(this)}></textarea>
 			          

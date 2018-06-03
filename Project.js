@@ -1,5 +1,6 @@
 import React from 'react'
-import {Card, CardTitle, Button, Icon, Row, Col, Chip, Modal} from 'react-materialize'
+import { Link } from 'react-router-dom'
+import {Card, CardTitle, Button, Icon, Row, Col, Chip, Modal,Tabs, Tab, Input} from 'react-materialize'
 
 const Project= () => (
   <div align="center" padding="10px 10px 10px 10px">
@@ -22,7 +23,6 @@ const Project= () => (
 				University and Princeton, where he was a research fellow in the field of moral philosophy, studying the relationship between 
 				addiction and free will. One upon a time, he also played bass guitar in the band Cut Copy. Here he discusses time management, 
 				not worrying too much about your first release, setting limitations, and the importance of remaining in dialogue with others in your field.</p>
-  <Button waves='light'>Edit Your Project</Button>&emsp;<br/><br/>
   <Modal
   trigger={<Button>Report<Icon right>delete_sweep</Icon></Button>}>
   <p>Do you want to Report this project?</p>
@@ -30,6 +30,56 @@ const Project= () => (
   <Button waves='red'>No<Icon right>clear</Icon></Button>&emsp;
 </Modal>
   <br/>
+  <Tabs className='tab-demo z-depth-1'>
+    <Tab title="Phase 1">
+		<h4>Title: IMPLEMENTATION</h4>
+		<h5>Status of this phase</h5>
+		<h5>Cost : Rs. 0 </h5>
+		  <Modal
+  trigger={<Button>Phase Updation<Icon right></Icon></Button>}>
+  <p>Update The Phase</p>
+  <Input s={8} label="Status of the phase" validate><Icon>bookmark_border</Icon></Input>
+  <Input s={8} label="Amount Required" validate><Icon>account_balance</Icon></Input>
+  <Button waves='red'>Ok<Icon right>check</Icon></Button>&emsp;
+</Modal>
+	</Tab>
+    <Tab title="Phase 2">
+	<h4>Title: MONITORING</h4>
+		<h5>Status of this phase</h5>
+		<h5>Cost : Rs. 0 </h5>
+		  <Modal
+  trigger={<Button>Phase Updation<Icon right></Icon></Button>}>
+  <p>Update The Phase</p>
+  <Input s={8} label="Status of the phase" validate><Icon>bookmark_border</Icon></Input>
+  <Input s={8} label="Amount Required" validate><Icon>account_balance</Icon></Input>
+  <Button waves='red'>Ok<Icon right>check</Icon></Button>&emsp;
+</Modal>
+	</Tab>
+    <Tab title="Phase 3">
+	<h4>Title: EVALUATION</h4>
+		<h5>Status of this phase</h5>
+		<h5>Cost : Rs. 0 </h5>
+		  <Modal
+  trigger={<Button>Phase Updation<Icon right></Icon></Button>}>
+  <p>Update The Phase</p>
+    <Input s={8} label="Status of the phase" validate><Icon>bookmark_border</Icon></Input>
+  <Input s={8} label="Amount Required" validate><Icon>account_balance</Icon></Input>
+  <Button waves='red'>Ok<Icon right>check</Icon></Button>&emsp;
+</Modal>
+	</Tab>
+    <Tab title="Phase 4">
+	<h4>Title: ADAPTION</h4>
+		<h5>Status of this phase</h5>
+		<h5>Cost : Rs. 0 </h5>
+		  <Modal
+  trigger={<Button>Phase Updation<Icon right></Icon></Button>}>
+  <p>Update The Phase</p>
+  <Input s={8} label="Status of the phase" validate><Icon>bookmark_border</Icon></Input>
+  <Input s={8} label="Amount Required" validate><Icon>account_balance</Icon></Input>
+  <Button waves='red'>Ok<Icon right>check</Icon></Button>&emsp;
+</Modal>
+	</Tab>
+</Tabs>
   <h3 align="left">Leave A Comment</h3>
   <div class="row">
     <form class="col s7">
