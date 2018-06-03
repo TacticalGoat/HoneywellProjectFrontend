@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Input, Button } from 'react-materialize'
+import { Row, Input, Button,MenuItem,Breadcrumb } from 'react-materialize'
 import AuthService from '../services/AuthService'
 
 class Login extends Component {
@@ -37,6 +37,12 @@ class Login extends Component {
 
     return (
       <div>
+        <div>
+        <Breadcrumb>
+  <MenuItem>Home</MenuItem>
+  <MenuItem>Login</MenuItem>
+  </Breadcrumb>
+          </div>
         <Row>
           <Input type="email" placeholder="Enter your email" label="Email" s={12} validate onChange={this.handleEmailChange.bind(this)} />
           <Input type="password" label="password" placeholder="Enter your password" s={12} onChange={this.handlePasswordChange.bind(this)} validate />
@@ -46,5 +52,6 @@ class Login extends Component {
     )
   }
 }
+
 
 export default Login
