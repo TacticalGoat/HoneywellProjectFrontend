@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardTitle, Button, Icon, Row, Col, Chip} from 'react-materialize'
+import {Card, CardTitle, Button, Icon, Row, Col, Chip, Modal} from 'react-materialize'
 
 const Project= () => (
   <div align="center" padding="10px 10px 10px 10px">
@@ -22,8 +22,13 @@ const Project= () => (
 				University and Princeton, where he was a research fellow in the field of moral philosophy, studying the relationship between 
 				addiction and free will. One upon a time, he also played bass guitar in the band Cut Copy. Here he discusses time management, 
 				not worrying too much about your first release, setting limitations, and the importance of remaining in dialogue with others in your field.</p>
-  <Button waves='light'>Edit Your Project</Button>&emsp;
-  <Button waves='red'>Report<Icon right>delete_sweep</Icon></Button>&emsp;
+  <Button waves='light'>Edit Your Project</Button>&emsp;<br/><br/>
+  <Modal
+  trigger={<Button>Report<Icon right>delete_sweep</Icon></Button>}>
+  <p>Do you want to Report this project?</p>
+  <Button waves='red'>Yes<Icon right>check</Icon></Button>&emsp;
+  <Button waves='red'>No<Icon right>clear</Icon></Button>&emsp;
+</Modal>
   <br/>
   <h3 align="left">Leave A Comment</h3>
   <div class="row">
