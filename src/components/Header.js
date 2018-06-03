@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, Icon, NavItem } from 'react-materialize'
+import { Navbar, Button, Card, Row, Col,CardTitle,Breadcrumb,MenuItem,Icon,Chip,Slider,Slide, NavItem } from 'react-materialize'
 const Header = () => (
   <div>
-    <Navbar  brand='Logo'right>
-      <ul>
-        <li><Link to='/'><Icon>insert_home</Icon></Link></li>
+    <Navbar className='black' brand='logo' right>
+            <ul>
+        <li><Link to='/'><Button floating large className='blue' waves='light' icon='home' /></Link></li>
         <li><Link to='/login'>Login</Link></li>
         <li><Link to='/register'>Register</Link></li>
       </ul>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Card, Row, Col,CardTitle,Footer,Icon } from 'react-materialize';
 const Foot = () => (
   <div>
-    <Footer  copyrights="@ Micro Funding"
+    <Footer   copyrights="@ Micro Funding"
   moreLinks={
     <a className="grey-text text-lighten-4 right" href="#!"></a>
   }
