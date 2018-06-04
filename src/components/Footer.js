@@ -7,7 +7,7 @@ class Foot extends Component {
     return (
       < div >
       <br/><br/>
-        <Footer copyrights="© 2018 by Arjun,Parul,Srikar"
+        <Footer class="page-footer black" copyrights="© 2018 by Arjun,Parul,Srikar"
 
           links={
             <ul>
