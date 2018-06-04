@@ -28,6 +28,7 @@ class Header extends Component {
               <li><Link to='/register'>Register</Link></li>
             </ul>
           </Navbar>
+          <br/> <br/> <br/>
         </div >
       )
     }
