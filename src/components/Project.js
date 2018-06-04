@@ -146,7 +146,7 @@ class Project extends Component {
                     milestone.updates.map((update, idx) => {
                       return (
                         <Col m={6} s={12}>
-                          <Card className='blue-grey darken-1' textClassName='white-text' title={update.title}>
+                          <Card className='medium' title={update.title}>
                             <p>Posted:{update.posted_on}</p>
                             <p>
                               {update.content}
@@ -158,7 +158,7 @@ class Project extends Component {
                   }
                   {
                     this.state.currentUserIsOwner ? (
-                      <div>
+                      <div align="center">
                         <Modal
                           trigger={<Button>Post Update<Icon right></Icon></Button>}>
                           <p>Update The Phase</p>
