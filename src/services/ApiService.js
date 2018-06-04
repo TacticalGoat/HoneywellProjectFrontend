@@ -13,6 +13,12 @@ class ApiService{
         }).then(res =>{return Promise.resolve(res)})
     }
 
+    getIndexProjects(){
+        return this.fetch(`${this.domain}/index`,{
+            method: 'GET'
+        }).then(res => {return Promise.resolve(res)})
+    }
+
     getProjectById(id){
         return this.fetch(`${this.domain}/project/details`,{
             method: 'POST',
@@ -30,6 +36,16 @@ class ApiService{
                 markdown,
                 banner_url,
                 milestones
+            })
+        }).then(res => {return Promise.resolve(res)})
+    }
+
+    addDonation(project_id, amount){
+        return this.fetch(`${this.domain}/donations`,{
+            method: 'POST',
+            body: JSON.stringify({
+                project_id,
+                amount
             })
         }).then(res => {return Promise.resolve(res)})
     }

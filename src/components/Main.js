@@ -6,6 +6,7 @@ import Register from './Register'
 import UserProfile from './UserProfile';
 import Project from './Project';
 import AddProject from './AddProject';
+import Loading from './Loading';
 
 const Main = () => (
     <main>
@@ -16,6 +17,7 @@ const Main = () => (
         <Route path='/user/id' component={UserProfile}/>
         <Route path='/project/:id' component={Project}/>
         <Route exact path='/addproject' component={AddProject}/>
+        <Route path='/loading/:id' component={Loading}/>
       </Switch>
     </main>
   )
