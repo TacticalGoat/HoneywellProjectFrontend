@@ -1,6 +1,36 @@
 import React from 'react'
 import { Button, Card, Row, Col,CardTitle,Breadcrumb,MenuItem,Icon,Chip,Slider,Slide } from 'react-materialize';
-const Home = () => (
+import {Link} from 'react-router-dom'
+import AuthService from '../services/AuthService'
+import ApiService from '../services/ApiService'
+class Home extends React.Component{
+  constructor() {
+    super();
+    this.Auth = new AuthService();
+    this.Api = new ApiService();
+    this.state = {
+      projects: [{
+        id: "",
+        name: "",
+        banner_url: ""
+      }]
+    }
+  }
+  Init(){
+    this.details()
+  }
+  details() {
+    this.Api.getIndexProjects()
+      .then(res => {
+        console.log(res);
+        this.setState({
+          "projects": res
+        })
+      })
+      .catch(err => { alert(err); })
+  }
+  render(){
+    return(
   <div>
        <div align="center" padding="10px 10px 10px 10px">
     <Slider>
@@ -24,23 +54,26 @@ const Home = () => (
   </div>      
   <h1 align="center">Projects</h1>
   <Row>
-	<Col s={6}>
-		<Card className='small'
-  header={<CardTitle image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS4lc7i7LhFXQuKH3Di4uFnEhUDKoB-OV8XEDWKbYgadLgiPfO'>Card Title</CardTitle>}
-  actions={[<a href='#'>Explore</a>]}>
-  I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
-</Card>
-</Col>
-<Col s={6}>
-		<Card className='small'
-  header={<CardTitle image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS4lc7i7LhFXQuKH3Di4uFnEhUDKoB-OV8XEDWKbYgadLgiPfO	'>Card Title</CardTitle>}
-  actions={[<a href='#'>Explore</a>]}>
-  I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
-</Card>
-</Col>
+	{
+            this.state.projects.map((project, idx) => {
+              console.log(project.id)
+              console.log(project.name)
+              console.log("Banner Url:" + project.banner_url)
+              return(
+                <div>
+                  <Row>
+                    <Card className="medium" header={
+                      <CardTitle  image={project.banner_url}>{project.name}</CardTitle>}
+                      actions={<Link to={'/project/' + project.id}> Explore</Link>}/>
+                  </Row>
+                </div>
+              )
+            })
+          }
 </Row>
 
   </div>
 )
-
+}
+}
 export default Home
