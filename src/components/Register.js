@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Input, Button, Slide, Slider, Icon} from 'react-materialize';
+import { Row, Input, Button, Slide, Slider, Icon,Col} from 'react-materialize';
 import AuthService from '../services/AuthService';
 class Register extends Component {
 
@@ -56,12 +56,14 @@ class Register extends Component {
   </Slide>
 </Slider>
         <Row>
+        <Col m={6} s={12}>
           <Input type="email" placeholder="Enter your email" label="Email" s={12} validate onChange={this.handleEmailChange.bind(this)} validate ><Icon>contacts</Icon></Input>
           <Input type="password" label="Password" placeholder="Enter your password" s={12} onChange={this.handlePasswordChange.bind(this)} validate ><Icon>lock</Icon></Input>
           <Input label="Name" placeholder="Enter your name" s={12} onChange={this.handleNameChange.bind(this)} validate ><Icon>sentiment_very_satisfied</Icon></Input>
           <Input type="tel" label="Phone" placeholder="Enter your phone number" s={12} onChange={this.handlePhoneChange.bind(this)} validate ><Icon>phone_iphone</Icon></Input>
           <Input type="textarea" label="Bio" placeholder="Tell us something about yourself" s={12} onChange={this.handleBioChange.bind(this)} ><Icon>looks</Icon></Input>
           <Button waves='light' onClick={this.handleButtonClick.bind(this)} >Register</Button>
+          </Col>
         </Row>
       </div>
     )

@@ -59,6 +59,8 @@ class Home extends React.Component{
   <hr width="50%" size="10"/>
   <br />
   <Row>
+    <Col s={2} />
+     <Col m={7}s={12} >
 	{
             this.state.projects.map((project, idx) => {
               console.log(project.id)
@@ -77,6 +79,7 @@ class Home extends React.Component{
               )
             })
           }
+          </Col>
 </Row>
 
   </div>
