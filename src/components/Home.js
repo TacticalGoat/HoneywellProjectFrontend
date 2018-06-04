@@ -2,11 +2,7 @@ import React from 'react'
 import { Button, Card, Row, Col,CardTitle,Breadcrumb,MenuItem,Icon,Chip,Slider,Slide } from 'react-materialize';
 const Home = () => (
   <div>
-<<<<<<< HEAD
-     <div align="center" padding="10px 10px 10px 10px">
-=======
        <div align="center" padding="10px 10px 10px 10px">
->>>>>>> 448a376732318ba25c04ae2cad93c3026fd4e9de
     <Slider>
   <Slide
     src="http://d3gtswiihfkcji.cloudfront.net/uploads/2015/08/05104938/Crowdfunding-concept.jpg"
@@ -44,10 +40,6 @@ const Home = () => (
 </Col>
 </Row>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 448a376732318ba25c04ae2cad93c3026fd4e9de
   </div>
 )
 
