@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component}  from 'react'
 import { Link } from 'react-router-dom'
 import {Card, CardTitle, Button, Icon, Row, Col, Chip, Modal,Tabs, Tab, Input} from 'react-materialize'
 
-const Project= () => (
-  <div align="center" padding="10px 10px 10px 10px">
+class Project extends Component{
+	render(){
+		return(
+			<div align="center" padding="10px 10px 10px 10px">
     <h1 align="center">Project Page</h1>
 		<Card className='large'
   header={<CardTitle image='https://cdn.pixabay.com/photo/2015/12/15/09/04/banner-1093907_960_720.jpg'>Card Title</CardTitle>}	
@@ -115,7 +117,11 @@ const Project= () => (
 </Row>
   </div>      
 
-  </div>
-)
+  </div>	
+		);
+	}
+}
+  
+
 
 export default Project

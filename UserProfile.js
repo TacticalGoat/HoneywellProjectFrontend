@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {Component}  from 'react'
 import {Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes} from 'react-materialize'
 
-const UserProfile= () => (
-  <div  padding="10px 10px 10px 10px">
+class UserProfile extends Component{
+	render(){
+		return(
+			<div  padding="10px 10px 10px 10px">
     <h1 align="center">User Profile</h1>
 	<div align="left">
   <Row>
@@ -16,7 +18,8 @@ const UserProfile= () => (
   </Col>
 </Row>
 </div>
-<h4 align="center"><u> My Projects</u></h4>
+<h4 align="center"><u> My Projects</u></h4> 
+<a class="btn-floating btn-large waves-effect waves-light red" ><i class="material-icons">add</i></a>
 <Row>
 	<Col s={6}>
 		<Card className='small'
@@ -70,6 +73,10 @@ const UserProfile= () => (
   </div>      
 
   </div>
-)
+	
+		);
+	}
+}
+
 
 export default UserProfile
