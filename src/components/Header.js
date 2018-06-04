@@ -42,6 +42,7 @@ class Header extends Component {
               <li><a onClick={this.handleLogout.bind(this)}> Logout </a></li>
             </ul>
           </Navbar>
+          <br/> <br/> <br/>
         </div >
       )
     }
