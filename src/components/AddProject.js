@@ -120,7 +120,7 @@ class AddProject extends Component {
                 <Row>
                     <Input placeholder="Enter Project Name" label="Project Name" 
                         onChange={this.handleNameChange.bind(this)} s={12} ><Icon>spellcheck</Icon></Input>
-                    <Input placeholder="Enter the markdown for your project" label="Description"
+                    <Input type="textarea" laceholder="Enter the markdown for your project" label="Description"
                         onChange={this.handleMarkdownChange.bind(this)} s={12} ><Icon>insert_comment</Icon></Input>
                     <Input placeholder="Enter the url for the banner image" label="Banner Url"
                         onChange={this.handleBannerUrlChange.bind(this)} s={12}><Icon>camera</Icon></Input>
@@ -148,5 +148,4 @@ class AddProject extends Component {
         )
     }
 }
-
-export default AddProject;
+export default AddProject
