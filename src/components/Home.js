@@ -16,15 +16,16 @@ class Home extends React.Component{
       }]
     }
   }
-  Init(){
+  componentWillMount(){
     this.details()
   }
+
   details() {
     this.Api.getIndexProjects()
       .then(res => {
         console.log(res);
         this.setState({
-          "projects": res
+          "projects": res.projects
         })
       })
       .catch(err => { alert(err); })
