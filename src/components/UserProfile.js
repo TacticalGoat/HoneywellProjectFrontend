@@ -1,7 +1,9 @@
-import React from 'react'
-import {Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes} from 'react-materialize'
+import React, { Component } from 'react'
+import { Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes } from 'react-materialize'
+import AuthService from '../services/AuthService'
+import ApiService from '../services/ApiService'
 
-const UserProfile= () => (
+/*const UserProfile= () => (
   <div  padding="10px 10px 10px 10px">
     <h1 align="center">User Profile</h1>
 	<div align="left">
@@ -70,6 +72,60 @@ const UserProfile= () => (
   </div>      
 
   </div>
-)
+)*/
+
+class UserProfile extends Component {
+  constructor() {
+    super();
+    this.Auth = new AuthService();
+    this.Api = new ApiService();
+    this.state = {
+      name: "",
+      email: "",
+      phone: "",
+      bio: ""
+    }
+  }
+  componentWillMount() {
+    if (!this.Auth.loggedIn()) {
+      this.props.history.replace('/');
+    }
+    this.getUserDetails();
+  }
+
+  getUserDetails() {
+    this.Api.getCurrentUserProfile()
+      .then(res => {
+        console.log(res);
+        this.setState({
+          "name": res.name,
+          "email": res.email,
+          "phone": res.phone,
+          "bio": res.bio
+        })
+      })
+      .catch(err => {alert(err);})
+  }
+
+  render() {
+    return (
+      <div>
+        <h1 align="center">User Profile</h1>
+        <div align="left">
+          <Row>
+            <Col s={3}>
+              <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/363633-200.png' />
+            </Col>
+            <Col s={9}>
+              <h3> Hii..{this.state.name} </h3>
+              <br />
+              <blockquotes>{this.state.bio}</blockquotes>
+            </Col>
+          </Row>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default UserProfile

@@ -9,8 +9,12 @@ class Header extends Component {
     this.Auth = new AuthService;
   }
   handleLogout(){
-    this.Auth.logout();
-    window.location = '/'
+    this.Auth.logout()
+      .then(res => {
+        window.location = '/';
+      }).catch(err => {
+        alert(err);
+      })
   }
   render() {
     if (!this.Auth.loggedIn()) {

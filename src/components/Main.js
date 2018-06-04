@@ -5,6 +5,7 @@ import Login from './Login'
 import Register from './Register'
 import UserProfile from './UserProfile';
 import Project from './Project';
+import AddProject from './AddProject';
 
 const Main = () => (
     <main>
@@ -13,7 +14,8 @@ const Main = () => (
         <Route path='/login' component={Login}/>
         <Route path='/register' component={Register}/>
         <Route path='/user/id' component={UserProfile}/>
-        <Route path='/project/id' component={Project}/>
+        <Route path='/project/:id' component={Project}/>
+        <Route exact path='/addproject' component={AddProject}/>
       </Switch>
     </main>
   )

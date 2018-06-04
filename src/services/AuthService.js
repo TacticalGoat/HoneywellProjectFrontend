@@ -69,7 +69,13 @@ class AuthService {
     }
 
     logout(){
-        localStorage.removeItem('access_token');
+        return this.fetch(`${this.domain}/revoke_access_token`,{
+            method: 'POST'
+        }).then(res => {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            return Promise.resolve(res);
+        })
     }
 
     fetch(url, options){
