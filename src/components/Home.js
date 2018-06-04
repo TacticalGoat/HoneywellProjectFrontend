@@ -52,17 +52,23 @@ class Home extends React.Component{
     And get Funding for your Idea.
   </Slide>
 </Slider>
+<br/>
+<hr width="80%" size="10"/>
   </div>      
   <h1 align="center">Projects</h1>
+  <hr width="50%" size="10"/>
+  <br />
   <Row>
 	{
             this.state.projects.map((project, idx) => {
               console.log(project.id)
               console.log(project.name)
               console.log("Banner Url:" + project.banner_url)
+              var count=0
               return(
                 <div>
                   <Row>
+                      
                     <Card className="medium" header={
                       <CardTitle  image={project.banner_url}>{project.name}</CardTitle>}
                       actions={<Link to={'/project/' + project.id}> Explore</Link>}/>
