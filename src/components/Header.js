@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Icon, NavItem } from 'react-materialize'
 import AuthService from '../services/AuthService';
-import logo from './logo.png'
+import logo from './images.ico'
 var Img= <img src={logo} />
 class Header extends Component {
   constructor() {
@@ -21,7 +21,7 @@ class Header extends Component {
     if (!this.Auth.loggedIn()) {
       return (
         < div >
-          <Navbar brand={Img}right>
+          <Navbar  brand={Img}right>
             <ul>
               <li><Link to='/'>Home</Link></li>
               <li><Link to='/login'>Login</Link></li>
@@ -34,7 +34,7 @@ class Header extends Component {
     else{
       return(
         < div >
-          <Navbar brand={Img} right>
+          <Navbar  brand={Img} right>
             <ul>
               <li><Link to='/'>Home</Link></li>
               <li><Link to='/user/id'>Profile</Link></li>
