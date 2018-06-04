@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes } from 'react-materialize'
+import { Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes, Slide, Slider} from 'react-materialize'
 import {Link} from 'react-router-dom'
 import AuthService from '../services/AuthService'
 import ApiService from '../services/ApiService'
