@@ -6,6 +6,7 @@ class Foot extends Component {
   render() {
     return (
       < div >
+      <br/><br/>
         <Footer copyrights="© 2018 by Arjun,Parul,Srikar"
 
           links={
