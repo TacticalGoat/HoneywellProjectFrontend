@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Main from './Main';
 import logo from './logo.svg';
+import Foot from './Footer';
 import './App.css';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
       <div>
         <Header/>
         <Main/>
+        <Foot />
       </div>
     );
   }
