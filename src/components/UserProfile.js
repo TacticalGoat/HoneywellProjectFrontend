@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes, Slide, Slider} from 'react-materialize'
+import { Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes, Slide, Slider,Collection,CollectionItem} from 'react-materialize'
 import {Link} from 'react-router-dom'
 import AuthService from '../services/AuthService'
 import ApiService from '../services/ApiService'
@@ -73,12 +73,16 @@ class UserProfile extends Component {
               <p>{this.state.bio}</p>
             </Col>
           </Row>
-		  <Row>
-		  <Link to='/addproject'><Button waves='light' >Add Project <Icon>add_box</Icon></Button></Link>
-		  </Row>
+		 
         </div>
-        <Row>
-          <h5>My Projects</h5>
+      
+        <Row >
+          <Col s={3} ><Link to='/addproject'> <Button waves='light' >Add Project <Icon>add_box</Icon></Button></Link> </Col>
+          
+        <Col m={7}s={12} >
+        <h5 align ="left" >My Projects</h5>
+          <br/>
+          
           {
             this.state.projects.map((project, idx) => {
               console.log(project.id)
@@ -86,15 +90,19 @@ class UserProfile extends Component {
               console.log("Banner Url:" + project.banner_url)
               return(
                 <div>
-                  <Row>
+               
+
+                 <Col m={7}s={7} >
                     <Card className="medium" header={
                       <CardTitle  image={project.banner_url}>{project.name}</CardTitle>}
                       actions={<Link to={'/project/' + project.id}> Explore</Link>}/>
-                  </Row>
+                  </Col>
+                
                 </div>
               )
             })
           }
+            </Col>
         </Row>
       </div>
     )
