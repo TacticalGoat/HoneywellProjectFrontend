@@ -117,7 +117,7 @@ class Project extends Component {
       <div>
         <h1 align="center">{this.state.name}</h1>
         <Card className='large'
-          header={<CardTitle image='https://cdn.pixabay.com/photo/2015/12/15/09/04/banner-1093907_960_720.jpg'>Card Title</CardTitle>}
+          header={<CardTitle image={this.state.bannerUrl}></CardTitle>}
           action={<a ref='#'><Button waves='light'>Donate</Button></a>}>
           {this.state.markdown}
         </Card>

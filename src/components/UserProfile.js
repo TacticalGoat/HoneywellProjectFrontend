@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, CardTitle, Button, Icon, Row, Col, Chip, blockquotes } from 'react-materialize'
+import {Link} from 'react-router-dom'
 import AuthService from '../services/AuthService'
 import ApiService from '../services/ApiService'
 
@@ -83,7 +84,12 @@ class UserProfile extends Component {
       name: "",
       email: "",
       phone: "",
-      bio: ""
+      bio: "",
+      projects: [{
+        id: "",
+        name: "",
+        bannerUrl: ""
+      }]
     }
   }
   componentWillMount() {
@@ -101,10 +107,11 @@ class UserProfile extends Component {
           "name": res.name,
           "email": res.email,
           "phone": res.phone,
-          "bio": res.bio
+          "bio": res.bio,
+          "projects": res.projects
         })
       })
-      .catch(err => {alert(err);})
+      .catch(err => { alert(err); })
   }
 
   render() {
@@ -119,10 +126,29 @@ class UserProfile extends Component {
             <Col s={9}>
               <h3> Hii..{this.state.name} </h3>
               <br />
-              <blockquotes>{this.state.bio}</blockquotes>
+              <p>{this.state.bio}</p>
             </Col>
           </Row>
         </div>
+        <Row>
+          <h5>My Projects</h5>
+          {
+            this.state.projects.map((project, idx) => {
+              console.log(project.id)
+              console.log(project.name)
+              console.log("Banner Url:" + project.banner_url)
+              return(
+                <div>
+                  <Row>
+                    <Card className="small" header={
+                      <CardTitle  image={project.banner_url}>{project.name}</CardTitle>}
+                      actions={<Link to={'/project/' + project.id}> Explore</Link>}/>
+                  </Row>
+                </div>
+              )
+            })
+          }
+        </Row>
       </div>
     )
   }
