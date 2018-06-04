@@ -70,6 +70,13 @@ class Project extends Component {
       .catch(err => alert(err))
   }
 
+  handleReport(){
+    let id = this.props.match.params.id;
+    this.Api.reportProject(id)
+      .then(res => {alert("The project has been reported.")})
+      .catch(err => alert(err))
+  }
+
   render() {
     return (
       <div>
@@ -110,7 +117,7 @@ class Project extends Component {
         <Modal
           trigger={<Button>Report<Icon right>delete_sweep</Icon></Button>}>
           <p>Do you want to Report this project?</p>
-          <Button waves='red'>Yes<Icon right>check</Icon></Button>&emsp;
+          <Button waves='red' onClick={this.handleReport.bind(this)}>Yes<Icon right>check</Icon></Button>&emsp;
           <Button waves='red'>No<Icon right>clear</Icon></Button>&emsp;
         </Modal>
         <h3 align="left">Leave A Comment</h3>

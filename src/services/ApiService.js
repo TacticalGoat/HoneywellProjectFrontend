@@ -40,6 +40,15 @@ class ApiService{
         }).then(res => {return Promise.resolve(res)})
     }
 
+    reportProject(project_id){
+        return this.fetch(`${this.domain}/reports`,{
+            method: 'POST',
+            body: JSON.stringify({
+                project_id
+            })
+        }).then(res => {return Promise.resolve(res)})
+    }
+
     addDonation(project_id, amount){
         return this.fetch(`${this.domain}/donations`,{
             method: 'POST',
