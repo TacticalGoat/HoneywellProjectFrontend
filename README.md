@@ -7,6 +7,7 @@ Micro Funding Platform
 3. Srikar Joysam - Frontend and Handled the services call on Frontend
 
 Our Stack
+
 Flask, Python - Backend
 React Js, React Materialize - Frontend
 SQL Lite - Database
