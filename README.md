@@ -1,6 +1,6 @@
 ## Team B6
 
-# Micro Funding Platform
+### Micro Funding Platform
 
 1. Arjun Narayan - Backend and Frontend Services
 2. Parul Malik - Frontend and Handled the services call on Frontend
